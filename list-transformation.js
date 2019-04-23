@@ -6,7 +6,6 @@ _.each = function (list, callback) {
 
   if (!list && (typeof list !== 'object' || Array.isArray(list))) {
     l(`list is not an object or array`);
-    return false;
   }
   
   if (!Array.isArray(list)) {
