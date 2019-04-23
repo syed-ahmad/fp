@@ -53,7 +53,6 @@ _.map = function (list, iterator) {
     }
   } else {
     for (let i=0; i < list.length; i++) {
-      l(list[i]);
       newArray.push(iterator(list[i], i, list));
     }
   }
@@ -63,3 +62,4 @@ _.map = function (list, iterator) {
 
 const arr = _.map(weapons, makeBroken);
 l(arr);
+l(_.map(suspects, CreateSuspectObject));
