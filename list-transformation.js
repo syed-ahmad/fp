@@ -9,18 +9,22 @@ _.each = function (list, callback) {
     return false;
   }
   
-  if (!list.hasOwnProperty('length')) {
-    for (var prop in list) { callback(list[prop]); }
+  if (!Array.isArray(list)) {
+    for (var key in list) { callback(list[key], key, list); }
   } else {
-    for (var k in Object.keys(list)) { callback(list[k]); }
-  }
+    for (let i=0; i < list.length; i++) {
+      // _.each return the item, index and list
+      callback(list[i], i, list); 
+    }
+  } 
 };
+
+//
 
 // _.each({ a: 1, b: [5,6,7], c: 3 }, (item) => console.log(item));
 // _.each(['Bilal', 'Shakira', 'Dee'], (item) => console.log(item));
 
 function CreateSuspectObject(name) {
-  l(name);
   return {
     name: name,
     color: name.split(' ')[1],
@@ -30,6 +34,4 @@ function CreateSuspectObject(name) {
 
 var suspects = ['Miss Scarlet', 'Colonel Mustard', 'Mr. White'];
 
-var objs = _.each(suspects, CreateSuspectObject);
-l(objs);
-
+console.log(_.each(suspects, CreateSuspectObject)); // Not working
