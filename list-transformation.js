@@ -25,7 +25,7 @@ _.each = function (list, callback) {
 // _.each(['Bilal', 'Shakira', 'Dee'], (item) => console.log(item));
 
 function CreateSuspectObject(name) {
-  return { name: name, color: name.split(' ')[1], speak() { console.log(`My name is ${name}`); } };
+  return { name: name, color: name.split(' ')[1], speak() { console.log(`My name is ${this.name}`); } };
 }
 
 var suspects = ['Miss Scarlet', 'Colonel Mustard', 'Mr. White'];
