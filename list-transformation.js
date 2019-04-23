@@ -42,10 +42,6 @@ const makeBroken = function (item) {
 
 // _.map returns an array
 _.map = function (list, iterator) {
-  if (!list && (typeof list !== 'object' || Array.isArray(list))) {
-    l(`list is not an object or array`);
-  }
-
   const newArray = [];
   _.each(list, function(item, index, arr) {
     newArray.push(iterator(item, index, arr));
