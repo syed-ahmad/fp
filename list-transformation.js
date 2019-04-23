@@ -47,15 +47,9 @@ _.map = function (list, iterator) {
   }
 
   const newArray = [];
-  if(!Array.isArray(list)) {
-    for (let key in list) {
-      newArray.push(iterator(list[key], key, list));
-    }
-  } else {
-    for (let i=0; i < list.length; i++) {
-      newArray.push(iterator(list[i], i, list));
-    }
-  }
+  _.each(list, function(item, index, arr) {
+    newArray.push(iterator(item, index, arr));
+  });
 
   return newArray;
 };
