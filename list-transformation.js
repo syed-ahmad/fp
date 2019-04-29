@@ -1,5 +1,21 @@
 'use strict';
 
+const express = require('express');
+const bodyParser = require('body-parser');
+
+const port = process.env.PORT || 3500;
+const app = express();
+
+app.use(bodyParser.json());
+
+app.get('/', (req, res, next) => {
+  res.status(200).send({ msg: 'Welcome to fp server!'}).end();
+});
+
+app.listen(port,(port, (req, res, next) => {
+  console.log(`fp server up and running listening on http://localhost:${port}/`);
+}));
+
 const l = (item) => console.log(item);
 const lh = (item) => {
   // l("========================");
