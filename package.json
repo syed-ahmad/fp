@@ -4,6 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
+    "start": "node list-transformation.js",
     "test": "echo \"Info: no test specified yet\" && exit 0"
   },
   "repository": {
