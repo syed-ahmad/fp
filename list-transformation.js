@@ -93,4 +93,19 @@ _.filter = function (list, callback) {
 
 l(_.filter(data, findBigNumbers)); 
 
+lh("=== () => {} ===");
+l(`=> fn, doesnt have its own its this keyword, the context in => fn points to the this in parents scope`);
+l(`=> fn, doesnt have its own value for arguments object-like-array i.e no binding of arguments object, unlike regular fn()`);
+l(`=> fn, strict mode doesnt apply`);
+l(`=> fn, call or apply dont bind this, the this value is ignored on invocation`);
+l(`=> fn, not suited for object methods as this value doesnt get bound`);
+l(`=> fn, Object.defineProperty() doesnt work as this value doesnt get bound`);
+l(`=> fn, new operator doesnt work, as => fn cannot be a construction fn`);
+l(`=> fn, the yield keyword may not be used in an arrow function's body (except when permitted within functions further nested within it). As a consequence, arrow functions cannot be used as generators`)
+l(`=> fn, best suited for non-method invocation`);
+l(`=> fn, good for Promise / thenify chain`);
+
+l(() => {return 3 + 4});
+
+
 l('\n --------------------------------------------------------------------- \n');
