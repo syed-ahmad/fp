@@ -122,7 +122,7 @@ l(suspectsPresent);
 
 const suspectNamesOnly = _.map(suspectsPresent, (item, index, arr) => item.name);
 l(suspectNamesOnly);
-
+// Or one line - a bit like composing functions
 l(_.map(_.filter(someData, (item, index, arr) => item.present === true), (item, index, arr) => item.name));
 
 
