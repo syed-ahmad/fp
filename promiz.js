@@ -25,6 +25,8 @@ const thirdMethod = (data) => {
   });
 }
 
+console.log(firstMethod.prototype.con)
+
 firstMethod()
   .then(secondMethod)
   .then(thirdMethod);

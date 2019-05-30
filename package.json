@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/syed-ahmad/fp#readme",
   "dependencies": {
-    "nodemon": "^1.18.11"
+    "nodemon": "^1.19.0"
   },
   "devDependencies": {
     "body-parser": "^1.19.0",
